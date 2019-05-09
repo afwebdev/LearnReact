@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Counter from "./components/counter";
-import Tester from "./components/testcomp";
+import Tester from "./components/counterDisplay";
 class App extends React.Component {
   render() {
     return (

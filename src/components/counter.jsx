@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Tester from "./testcomp";
+import CounterDisplay from "./counterDisplay";
 
 class Counter extends Component {
   state = {
@@ -9,21 +9,18 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <div className="displayCount">
+          <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        </div>
+        <div className="btn-group">
+          <button className="btn" onClick={this.incrementCount}>
+            <span>+</span>
+          </button>
 
-        <button
-          className="btn btn-secondary btn-sm m-2"
-          onClick={this.incrementCount}
-        >
-          <span>+</span>
-        </button>
-
-        <button
-          className="btn btn-secondary btn-sm m-2"
-          onClick={this.decrementCount}
-        >
-          <span>-</span>
-        </button>
+          <button className="btn" onClick={this.decrementCount}>
+            <span>-</span>
+          </button>
+        </div>
       </div>
     );
   }
@@ -37,8 +34,8 @@ class Counter extends Component {
   };
 
   getBadgeClasses() {
-    let classes = "badge m-2 badge-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    let classes = "";
+    classes += this.state.count === 0 ? "zero" : "notZero";
     return classes;
   }
 
