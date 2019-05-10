@@ -3,12 +3,13 @@ import CounterDisplay from "./counterDisplay";
 
 class Counter extends Component {
   state = {
-    count: 0
+    count: 0,
+    modifier: 1
   };
 
   render() {
     return (
-      <div>
+      <form onSubmit={e => e.preventDefault()} className="container">
         <CounterDisplay value={this.formatCount()} />
 
         <div className="btn-group">
@@ -20,28 +21,35 @@ class Counter extends Component {
             <span>-</span>
           </button>
         </div>
-      </div>
+        <div className="change-inc">
+          <input
+            onChange={this.changeIncrement}
+            placeholder="Enter A Value.."
+            type="text"
+          />
+        </div>
+      </form>
     );
   }
 
-  incrementCount = () => {
-    this.setState({ count: this.state.count + 1 });
+  changeIncrement = e => {
+    e.preventDefault();
+    this.setState({
+      modifier: e.target.value
+    });
+  };
+
+  incrementCount = e => {
+    this.setState({ count: this.state.count + parseInt(this.state.modifier) });
   };
 
   decrementCount = () => {
-    this.setState({ count: this.state.count - 1 });
+    this.setState({ count: this.state.count - parseInt(this.state.modifier) });
   };
 
   formatCount() {
     const { count } = this.state;
     return count === 0 ? "Zero!" : count;
-  }
-
-  checkZero() {
-    let classes = "";
-    classes += this.props.value === 0 ? "zero" : "notZero";
-    console.log(this.props.value);
-    return classes;
   }
 }
 

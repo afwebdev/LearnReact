@@ -7,7 +7,7 @@ class CounterDisplay extends Component {
   render() {
     return (
       <div className="displayCount">
-        <span>{this.props.value}</span>
+        <h1>{this.props.value}</h1>
       </div>
     );
   }
