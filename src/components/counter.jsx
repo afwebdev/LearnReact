@@ -34,9 +34,15 @@ class Counter extends Component {
 
   changeIncrement = e => {
     e.preventDefault();
-    this.setState({
-      modifier: e.target.value
-    });
+    if (e.target.value === "") {
+      this.setState({
+        modifier: 1
+      });
+    } else {
+      this.setState({
+        modifier: e.target.value
+      });
+    }
   };
 
   incrementCount = e => {
