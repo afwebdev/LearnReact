@@ -34,7 +34,14 @@ class Counter extends Component {
 
   formatCount() {
     const { count } = this.state;
-    return count === 0 ? <span>Zero!</span> : count;
+    return count === 0 ? "Zero!" : count;
+  }
+
+  checkZero() {
+    let classes = "";
+    classes += this.props.value === 0 ? "zero" : "notZero";
+    console.log(this.props.value);
+    return classes;
   }
 }
 

@@ -7,20 +7,16 @@ class CounterDisplay extends Component {
   render() {
     return (
       <div className="displayCount">
-        <span className={this.checkZero()}>{this.props.value}</span>
+        <span>{this.props.value}</span>
       </div>
     );
   }
 
   checkZero() {
     let classes = "";
-    classes += this.state.count === 0 ? "zero" : "notZero";
+    classes += this.props.value === 0 ? "zero" : "notZero";
+    console.log(this.props.value);
     return classes;
-  }
-
-  formatCount() {
-    const { count } = this.state;
-    return count === 0 ? <span>Zero!</span> : count;
   }
 }
 
