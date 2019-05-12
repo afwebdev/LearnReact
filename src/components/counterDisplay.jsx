@@ -15,7 +15,6 @@ class CounterDisplay extends Component {
   checkZero() {
     let classes = "";
     classes += this.props.value === 0 ? "zero" : "notZero";
-    console.log(this.props.value);
     return classes;
   }
 }
