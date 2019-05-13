@@ -16,16 +16,17 @@ class Counter extends Component {
           <button className="btn" onClick={this.incrementCount}>
             <span>+</span>
           </button>
-
           <button className="btn" onClick={this.decrementCount}>
             <span>-</span>
           </button>
         </div>
+
         <div className="change-inc">
           <input
             onChange={this.changeIncrement}
             placeholder="Enter A Value.."
-            type="text"
+            type="number"
+            defaultValue="1"
           />
         </div>
       </form>
