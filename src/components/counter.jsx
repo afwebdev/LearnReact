@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CounterDisplay from "./counterDisplay";
+import Modifier from "./modifier";
 
 class Counter extends Component {
   state = {
@@ -20,15 +21,7 @@ class Counter extends Component {
             <span>-</span>
           </button>
         </div>
-
-        <div className="change-inc">
-          <input
-            onChange={this.changeIncrement}
-            placeholder="Enter A Value.."
-            type="number"
-            defaultValue="1"
-          />
-        </div>
+        <Modifier changeInc={this.changeIncrement} />
       </form>
     );
   }
