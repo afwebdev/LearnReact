@@ -5,11 +5,15 @@ export default class Modifier extends Component {
     return (
       <div className="change-inc">
         <input
+          id="changeValue"
           onChange={this.props.changeInc}
           placeholder="Enter A Value.."
           type="number"
-          defaultValue="1"
+          value={this.props.val}
         />
+        <button onClick={this.props.resetState} id="resetBtn">
+          <span>Reset</span>
+        </button>
       </div>
     );
   }

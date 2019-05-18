@@ -5,6 +5,25 @@
 body {
   background-color: #efefef;
   font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+}
+
+.navLinks li {
+  padding: 2em;
+  background-color: #000500;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #efefef;
 }
 
 .btn-group {
@@ -12,10 +31,19 @@ body {
   justify-content: center;
 }
 
+#resetBtn {
+  margin-left: 1em;
+  border-radius: 120px;
+}
+
 .container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+#resetBtn {
+  width: 5%;
 }
 
 .change-inc {

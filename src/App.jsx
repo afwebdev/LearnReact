@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import Counter from "./components/counter";
-// import Tester from "./components/counterDisplay";
-// import CounterDisplay from "./components/counterDisplay";
+import Header from "./components/header";
 class App extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <Counter />
       </div>
     );

@@ -10,7 +10,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <form onSubmit={e => e.preventDefault()} className="container">
+      <div className="container">
         <CounterDisplay value={this.formatCount()} />
 
         <div className="btn-group">
@@ -21,23 +21,49 @@ class Counter extends Component {
             <span>-</span>
           </button>
         </div>
-        <Modifier changeInc={this.changeIncrement} />
-      </form>
+
+        <Modifier
+          val={this.state.modifier}
+          resetState={this.resetState}
+          changeInc={this.changeIncrement}
+        />
+      </div>
     );
   }
 
-  changeIncrement = e => {
-    e.target.value === ""
-      ? this.setState({ modifier: 1 })
-      : this.setState({ modifier: e.target.value });
+  resetState = () => {
+    this.setState({
+      count: 0,
+      modifier: 1
+    });
   };
 
-  incrementCount = e => {
-    this.setState({ count: this.state.count + parseInt(this.state.modifier) });
+  changeIncrement = e => {
+    this.setState({ modifier: e.target.value });
+  };
+
+  incrementCount = () => {
+    if (this.state.modifier === "") {
+      this.setState({
+        modifier: 1
+      });
+    } else {
+      this.setState({
+        count: this.state.count + parseInt(this.state.modifier)
+      });
+    }
   };
 
   decrementCount = () => {
-    this.setState({ count: this.state.count - parseInt(this.state.modifier) });
+    if (this.state.modifier === "") {
+      this.setState({
+        modifier: 1
+      });
+    } else {
+      this.setState({
+        count: this.state.count - parseInt(this.state.modifier)
+      });
+    }
   };
 
   formatCount() {
