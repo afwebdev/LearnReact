@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BuildLinks from "./links";
+import BuildLinks from "./BuildLinks";
 
 class Header extends Component {
   state = {

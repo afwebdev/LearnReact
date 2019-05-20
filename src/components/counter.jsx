@@ -1,12 +1,18 @@
 import React, { Component } from "react";
-import CounterDisplay from "./counterDisplay";
-import Modifier from "./modifier";
+import CounterDisplay from "./CounterDisplay";
+import Modifier from "./Modifier";
 
 class Counter extends Component {
-  state = {
-    count: 0,
-    modifier: 1
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      modifier: 1,
+      defCheckboxChecked: true
+    };
+    this.btn1 = React.createRef();
+    this.btn2 = React.createRef();
+  }
 
   render() {
     return (
@@ -14,10 +20,10 @@ class Counter extends Component {
         <CounterDisplay value={this.formatCount()} />
 
         <div className="btn-group">
-          <button className="btn" onClick={this.incrementCount}>
+          <button ref={this.btn1} className="btn" onClick={this.incrementCount}>
             <span>+</span>
           </button>
-          <button className="btn" onClick={this.decrementCount}>
+          <button ref={this.btn2} className="btn" onClick={this.decrementCount}>
             <span>-</span>
           </button>
         </div>
@@ -26,16 +32,32 @@ class Counter extends Component {
           val={this.state.modifier}
           resetState={this.resetState}
           changeInc={this.changeIncrement}
+          changeType={this.changeType}
+          defCheckbox={this.state.defCheckboxChecked}
         />
       </div>
     );
   }
 
-  resetState = () => {
+  changeType = e => {
+    if (e.target.value === "addSub") {
+      this.btn1.current.innerText = "+";
+      this.btn2.current.innerText = "-";
+    } else if (e.target.value === "multiDiv") {
+      this.btn1.current.innerText = "*";
+      this.btn2.current.innerText = "/";
+    }
+  };
+
+  resetState = cb => {
     this.setState({
       count: 0,
-      modifier: 1
+      modifier: 1,
+      defCheckbox: true
     });
+    this.btn1.current.innerText = "+";
+    this.btn2.current.innerText = "-";
+    cb();
   };
 
   changeIncrement = e => {
@@ -49,7 +71,11 @@ class Counter extends Component {
       });
     } else {
       this.setState({
-        count: this.state.count + parseInt(this.state.modifier)
+        count: eval(
+          `${this.state.count}${this.btn1.current.innerText}${
+            this.state.modifier
+          }`
+        )
       });
     }
   };
@@ -61,15 +87,19 @@ class Counter extends Component {
       });
     } else {
       this.setState({
-        count: this.state.count - parseInt(this.state.modifier)
+        count: eval(
+          `${this.state.count}${this.btn2.current.innerText}${
+            this.state.modifier
+          }`
+        )
       });
     }
   };
 
-  formatCount() {
+  formatCount = () => {
     const { count } = this.state;
     return count === 0 ? "Zero!" : count;
-  }
+  };
 }
 
 export default Counter;

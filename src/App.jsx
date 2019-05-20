@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Counter from "./components/counter";
-import Header from "./components/header";
+import Counter from "./components/Counter";
+import Header from "./components/Header";
 class App extends React.Component {
   render() {
     return (
