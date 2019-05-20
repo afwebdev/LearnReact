@@ -20,10 +20,20 @@ class Counter extends Component {
         <CounterDisplay value={this.formatCount()} />
 
         <div className="btn-group">
-          <button ref={this.btn1} className="btn" onClick={this.incrementCount}>
+          <button
+            id="btn1"
+            ref={this.btn1}
+            className="btn"
+            onClick={this.updateCount}
+          >
             <span>+</span>
           </button>
-          <button ref={this.btn2} className="btn" onClick={this.decrementCount}>
+          <button
+            id="btn2"
+            ref={this.btn2}
+            className="btn"
+            onClick={this.updateCount}
+          >
             <span>-</span>
           </button>
         </div>
@@ -64,26 +74,14 @@ class Counter extends Component {
     this.setState({ modifier: e.target.value });
   };
 
-  incrementCount = () => {
-    if (this.state.modifier === "") {
-      this.setState({
-        modifier: 1
-      });
-    } else {
+  updateCount = btnPressed => {
+    if (btnPressed.target.id === "btn1") {
       this.setState({
         count: eval(
           `${this.state.count}${this.btn1.current.innerText}${
             this.state.modifier
           }`
         )
-      });
-    }
-  };
-
-  decrementCount = () => {
-    if (this.state.modifier === "") {
-      this.setState({
-        modifier: 1
       });
     } else {
       this.setState({

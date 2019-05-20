@@ -26,6 +26,7 @@ export default class Modifier extends Component {
 
         {/* RADIO BUTTONS */}
         <input
+          id="addSub"
           value="addSub"
           onClick={this.props.changeType}
           type="radio"

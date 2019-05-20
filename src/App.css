@@ -9,6 +9,11 @@ body {
   padding: 0;
 }
 
+label {
+  text-align: center;
+  align-self: center;
+}
+
 .navLinks ul {
   display: flex;
   justify-content: flex-end;
