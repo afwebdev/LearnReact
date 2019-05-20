@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
 export default class Modifier extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      defCheck: true
-    };
-    this.default = React.createRef();
-  }
+  state = {
+    defCheck: true
+  };
 
   render() {
     return (
@@ -36,7 +32,6 @@ export default class Modifier extends Component {
           name="symbol"
           onChange={this.changeCheck}
           checked={this.state.defCheck}
-          ref={this.default}
         />
         <label style={{ marginRight: 10, marginLeft: 5 }} htmlFor="addSub">
           Add / Sub
