@@ -1,4 +1,4 @@
 My First React APP.
 
 
-A counter app to learn state and how to use ReactJS
+This APP is a simple counter made with React. It will Add/Subtract/Multiply/Divide User input by current count.
