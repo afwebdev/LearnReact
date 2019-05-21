@@ -5,10 +5,10 @@ import Header from "./components/Header";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <Counter />
-      </div>
+      </React.Fragment>
     );
   }
 }

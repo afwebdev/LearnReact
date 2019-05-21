@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CounterDisplay from "./CounterDisplay";
 import Modifier from "./Modifier";
+import safeEval from "safe-eval";
 
 class Counter extends Component {
   constructor(props) {
@@ -75,23 +76,12 @@ class Counter extends Component {
   };
 
   updateCount = btnPressed => {
-    if (btnPressed.target.id === "btn1") {
-      this.setState({
-        count: eval(
-          `${this.state.count}${this.btn1.current.innerText}${
-            this.state.modifier
-          }`
-        )
-      });
-    } else {
-      this.setState({
-        count: eval(
-          `${this.state.count}${this.btn2.current.innerText}${
-            this.state.modifier
-          }`
-        )
-      });
-    }
+    const operator = btnPressed.target.innerText;
+    this.setState({
+      count: safeEval(
+        `(${this.state.count})${operator}(${this.state.modifier})`
+      )
+    });
   };
 
   formatCount = () => {
