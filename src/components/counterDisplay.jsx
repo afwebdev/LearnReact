@@ -1,11 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 
-const CounterDisplay = props => {
-  return (
-    <div className="displayCount">
-      <h1>{props.value}</h1>
-    </div>
-  );
-};
+class CounterDisplay extends Component {
+  checkZero = num => {
+    return num === "Zero!" ? "textZero" : "";
+  };
+
+  render() {
+    return (
+      <div>
+        <h2 className={this.checkZero(this.props.value)}>{this.props.value}</h2>
+      </div>
+    );
+  }
+}
 
 export default CounterDisplay;

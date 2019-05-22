@@ -4,16 +4,16 @@ import BuildLinks from "./BuildLinks";
 class Header extends Component {
   state = {
     links: [
-      { name: "Home", link: "#home" },
-      { name: "About", link: "#about" },
-      { name: "Contact", link: "#contact" }
+      { name: "Home", link: "/" },
+      { name: "About", link: "/about" },
+      { name: "Contact", link: "/contact" }
     ]
   };
 
   render() {
     return (
-      <div>
-        <navbar className="navLinks">
+      <React.Fragment>
+        <div className="navbar">
           <ul className="nav-ul">
             {this.state.links.map(list => {
               return (
@@ -21,8 +21,8 @@ class Header extends Component {
               );
             })}
           </ul>
-        </navbar>
-      </div>
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -18,6 +18,7 @@ class Counter extends Component {
   render() {
     return (
       <div className="container">
+        <h1>The Simple Counter!</h1>
         <CounterDisplay value={this.formatCount()} />
 
         <div className="btn-group">
@@ -75,12 +76,13 @@ class Counter extends Component {
     this.setState({ modifier: e.target.value });
   };
 
+  //Need to find a better solution here.. I want to avoid eval..
   updateCount = btnPressed => {
+    const count = this.state.count;
+    const mod = this.state.modifier;
     const operator = btnPressed.target.innerText;
     this.setState({
-      count: safeEval(
-        `(${this.state.count})${operator}(${this.state.modifier})`
-      )
+      count: safeEval(`(${count})${operator}(${mod})`)
     });
   };
 

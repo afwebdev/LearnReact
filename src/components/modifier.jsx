@@ -5,6 +5,18 @@ export default class Modifier extends Component {
     defCheck: true
   };
 
+  radioHandler = e => {
+    if (e.target.value === "addSub") {
+      this.setState({ defCheck: true });
+    } else {
+      this.setState({ defCheck: false });
+    }
+  };
+
+  defaultCheck = () => {
+    this.setState({ defCheck: true });
+  };
+
   render() {
     return (
       <div className="change-inc">
@@ -25,44 +37,35 @@ export default class Modifier extends Component {
         </button>
 
         {/* RADIO BUTTONS */}
-        <input
-          id="addSub"
-          value="addSub"
-          onClick={this.props.changeType}
-          type="radio"
-          name="symbol"
-          onChange={this.changeCheck}
-          checked={this.state.defCheck}
-        />
-        <label style={{ marginRight: 10, marginLeft: 5 }} htmlFor="addSub">
-          Add / Sub
-        </label>
-        <input
-          id="multiDiv"
-          value="multiDiv"
-          onClick={this.props.changeType}
-          type="radio"
-          name="symbol"
-          checked={!this.state.defCheck}
-          onChange={this.changeCheck}
-        />
-        <label style={{ marginRight: 10, marginLeft: 5 }} htmlFor="multiDiv">
-          Multi / Div
-        </label>
+        <div className="radio-group">
+          <div>
+            <input
+              className="radioBtn"
+              id="addSub"
+              value="addSub"
+              onClick={this.props.changeType}
+              type="radio"
+              name="symbol"
+              onChange={this.radioHandler}
+              checked={this.state.defCheck}
+            />
+            <label htmlFor="addSub">Add / Sub</label>
+          </div>
+          <div>
+            <input
+              className="radioBtn"
+              id="multiDiv"
+              value="multiDiv"
+              onClick={this.props.changeType}
+              type="radio"
+              name="symbol"
+              checked={!this.state.defCheck}
+              onChange={this.radioHandler}
+            />
+            <label htmlFor="multiDiv">Multi / Div</label>
+          </div>
+        </div>
       </div>
     );
   }
-
-  changeCheck = e => {
-    console.log(e.target.value);
-    if (e.target.value === "addSub") {
-      this.setState({ defCheck: true });
-    } else {
-      this.setState({ defCheck: false });
-    }
-  };
-
-  defaultCheck = () => {
-    this.setState({ defCheck: true });
-  };
 }

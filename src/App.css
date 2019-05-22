@@ -2,7 +2,39 @@
   text-align: center;
 }
 
+html {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: #0069ed;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover {
+  background: #0053ba;
+  box-shadow: 5px 5px 5px #041835;
+}
+
+button:focus {
+  outline: none;
+}
+
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
   background-color: #efefef;
   font-size: 12px;
   margin: 0;
@@ -10,23 +42,26 @@ body {
 }
 
 label {
-  text-align: center;
-  align-self: center;
+  letter-spacing: 2px;
 }
 
-.navLinks ul {
+.radioBtn {
+  margin: 1em;
+}
+
+.navbar ul {
   display: flex;
   justify-content: flex-end;
   list-style: none;
   margin: 0;
 }
 
-.navLinks li {
-  padding: 2em;
+.navbar li {
+  padding: 3vh;
   background-color: #000500;
 }
 
-.navLinks a {
+.navbar a {
   text-decoration: none;
   color: #efefef;
 }
@@ -34,28 +69,46 @@ label {
 .btn-group {
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
 }
 
 #resetBtn {
-  margin-left: 1em;
+  flex: 1;
+  font-size: 1.2em;
+  padding: 1em;
+  margin-bottom: 1em;
   border-radius: 120px;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  height: 80vh;
+  width: 100%;
 }
 
-#resetBtn {
-  width: 5%;
+.textZero {
+  color: red;
+}
+
+#changeValue {
+  height: 2em;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 .change-inc {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2em;
-  height: 2em;
+  width: 75%;
 }
 
 .btn {
@@ -63,14 +116,15 @@ label {
 }
 
 .btn:nth-of-type(1) {
-  width: 20%;
+  padding: 1em 2em;
   margin-right: 2em;
   border-radius: 1em;
+  min-width: 5em;
 }
 
 .btn:nth-of-type(2) {
-  width: 20%;
-  padding: 1em;
+  min-width: 5em;
+  padding: 1em 2em;
   border-radius: 1em;
 }
 
