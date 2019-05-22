@@ -12,7 +12,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Switch>
-          <Route exact path="/" component={Counter} />
+          <Route exact path="/LearnReact" component={Counter} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
 
