@@ -4,7 +4,7 @@ import BuildLinks from "./BuildLinks";
 class Header extends Component {
   state = {
     links: [
-      { name: "Home", link: "/" },
+      { name: "Home", link: "/LearnReact" },
       { name: "About", link: "/about" },
       { name: "Contact", link: "/contact" }
     ]
