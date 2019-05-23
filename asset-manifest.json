@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/LearnReact/static/css/main.600cb0f4.chunk.css",
-    "main.js": "/LearnReact/static/js/main.e16e9ab4.chunk.js",
-    "main.js.map": "/LearnReact/static/js/main.e16e9ab4.chunk.js.map",
+    "main.js": "/LearnReact/static/js/main.4fb71aeb.chunk.js",
+    "main.js.map": "/LearnReact/static/js/main.4fb71aeb.chunk.js.map",
     "runtime~main.js": "/LearnReact/static/js/runtime~main.a72445d7.js",
     "runtime~main.js.map": "/LearnReact/static/js/runtime~main.a72445d7.js.map",
     "static/js/2.9b3d9aae.chunk.js": "/LearnReact/static/js/2.9b3d9aae.chunk.js",
     "static/js/2.9b3d9aae.chunk.js.map": "/LearnReact/static/js/2.9b3d9aae.chunk.js.map",
     "index.html": "/LearnReact/index.html",
-    "precache-manifest.e645d1c25b3b75b62cf9d7874937ce43.js": "/LearnReact/precache-manifest.e645d1c25b3b75b62cf9d7874937ce43.js",
+    "precache-manifest.4ed9f571f9b8e2fb5eece7d95e11191f.js": "/LearnReact/precache-manifest.4ed9f571f9b8e2fb5eece7d95e11191f.js",
     "service-worker.js": "/LearnReact/service-worker.js",
     "static/css/main.600cb0f4.chunk.css.map": "/LearnReact/static/css/main.600cb0f4.chunk.css.map"
   }
